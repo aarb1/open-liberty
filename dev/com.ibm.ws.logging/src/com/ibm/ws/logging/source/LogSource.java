@@ -151,7 +151,7 @@ public class LogSource implements Source, WsLogHandler {
         genData.addPair("ibm_threadId", threadIdVal);
         genData.addPair("module", logRecord.getLoggerName());
         genData.addPair("severity", LogFormatUtils.mapLevelToType(logRecord));
-        genData.addPair("logLevel", LogFormatUtils.mapLevelToRawType(logRecord));
+        genData.addPair("loglevel", LogFormatUtils.mapLevelToRawType(logRecord));
         genData.addPair("ibm_methodName", logRecord.getSourceMethodName());
         genData.addPair("ibm_className", logRecord.getSourceClassName());
 
@@ -165,7 +165,7 @@ public class LogSource implements Source, WsLogHandler {
         }
 
         genData.addPairs(extensions);
-        genData.addPair("sequence", sequenceNumber.next(dateVal));
+        genData.addPair("ibm_sequence", sequenceNumber.next(dateVal));
         //String sequence = date + "_" + String.format("%013X", seq.incrementAndGet());
 
         Throwable thrown = logRecord.getThrown();

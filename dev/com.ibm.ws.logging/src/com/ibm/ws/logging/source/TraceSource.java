@@ -110,7 +110,7 @@ public class TraceSource implements Source, WsTraceHandler {
         genData.addPair("ibm_threadId", logRecord.getThreadID());
         genData.addPair("module", logRecord.getLoggerName());
         genData.addPair("severity", LogFormatUtils.mapLevelToType(logRecord));
-        genData.addPair("logLevel", LogFormatUtils.mapLevelToRawType(logRecord));
+        genData.addPair("loglevel", LogFormatUtils.mapLevelToRawType(logRecord));
         genData.addPair("ibm_methodName", logRecord.getSourceMethodName());
         genData.addPair("ibm_className", logRecord.getSourceClassName());
         String sequenceNum = sequenceNumber.next(datetimeValue);
